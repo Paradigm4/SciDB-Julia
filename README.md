@@ -1,6 +1,6 @@
 SciDB-Julia
 ===========
-Introduction
+##Introduction
 
 The SciDB-Julia package allows users of Julia to interface with SciDB. The API follows the Julia convention and allows for using Julia language constructs in SciDB operations.
 Requirements
@@ -10,7 +10,7 @@ Requirements
     SciDB 14.6
     Paradigm4 shim for REST-ful access to SciDB (​https://github.com/Paradigm4/shim) 
 
-Usage
+##Usage
 
 To load the SciDB-Julia package, ensure that the Julia LOAD_PATH variable points towards the folder in which the package lives.
 
@@ -26,7 +26,7 @@ The Paradigm4 shim must be up-and-running, according to the instructions at the 
 
     julia> using SciDBJulia
 
-Example 1 - Multiplying Two Dense SciDB Matrices
+###Example 1 - Multiplying Two Dense SciDB Matrices
 
 Create a Julia array and then use it to create a matching SciDB array. The first invocation of scidb takes a small amount of time to create network connections to the SciDB database. Subsequent invocations should take no noticeable amount of time.
 
@@ -85,7 +85,7 @@ Arrays created in SciDB from Julia are persistent and must be explicitly removed
 
     julia> remove(C)
 
-Example 2 - Multiplying Two Sparse Matrices, one from Julia, one from SciDB
+###Example 2 - Multiplying Two Sparse Matrices, one from Julia, one from SciDB
 
     julia> a=sprand(3,4,0.40)
     3x4 sparse matrix with 3 Float64 entries:
@@ -118,7 +118,7 @@ Example 2 - Multiplying Two Sparse Matrices, one from Julia, one from SciDB
     	[1, 3]  =  0.367502
     	[2, 3]  =  0.56959
 
-API
+##API
 
     function scidb(J::AbstractArray, chunkSize=32, densityOverride="none")
       # Create a SciDB array from a Julia array
@@ -138,9 +138,9 @@ API
     function julia(S::scidb_array)
       # Populate a Julia array from a SciDB array which was previously created by a SciDB query from Julia
 
-Limitations
-1. The plugin must be run on the same machine as the shim server and at port 8080.
-2. Only 2-dimensional matrices are supported.
+##Limitations
+    1. The plugin must be run on the same machine as the shim server and at port 8080.
+    2. Only 2-dimensional matrices are supported.
 
 
 
