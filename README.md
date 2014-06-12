@@ -137,3 +137,10 @@ API
     
     function julia(S::scidb_array)
       # Populate a Julia array from a SciDB array which was previously created by a SciDB query from Julia
+
+Limitations
+1. The plugin must be run on the same machine as the shim server and at port 8080.
+2. Only 2-dimensional matrices are supported.
+
+
+
