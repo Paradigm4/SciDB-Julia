@@ -141,6 +141,6 @@ Arrays created in SciDB from Julia are persistent and must be explicitly removed
 ##Limitations
     1. The plugin must be run on the same machine as the shim server and at port 8080.
     2. Only 2-dimensional matrices are supported.
-
+    3. Load the dense_linear_algebra and linear_algebra libraries via iquery before running SciDBJulia.
 
 
