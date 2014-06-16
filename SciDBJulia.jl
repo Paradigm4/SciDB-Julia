@@ -86,7 +86,7 @@ end  # end dense_build_query
 # Construct the query string for building a sparse array on SciDB.
 function sparse_build_query(J::scidb_array)
     # Construct a query to send to the shim containing the SciDB array to build.
-    scidb_query = "store(build_sparse(<attr:" * eltype_lookup(eltype(J.julia_arr)) * ">["
+    scidb_query = "create%20array%20" * J.name * "<attr:" * eltype_lookup(eltype(J.julia_arr)) * ">["
     total_dims = ndims(J.julia_arr)
     schema = ""
 
@@ -105,7 +105,7 @@ function sparse_build_query(J::scidb_array)
 
     # We're going to leave all of the cells empty for now.  The file uploaded to
     # SciDB will be used by the load operator to populate the array with values.
-    schema = schema * "],0,0)," * J.name * ")"
+    schema = schema * "]"
     scidb_query = scidb_query * schema
     return scidb_query
 end  # end sparse_build_query
