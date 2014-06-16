@@ -42,7 +42,7 @@ Create a Julia array and then use it to create a matching SciDB array. The first
      0.74014   0.55052   0.344965  0.504495
      0.191254  0.627969  0.341594  0.878666,32,false)
 
-A is a handle to the SciDB corresponding SciDB array. It contains a and a pointer to the same array on SciDB. Let's continue to make another array b, and its handle for a corresponding array on SciDB, B.
+_A_ is a handle to the SciDB corresponding SciDB array. It contains _a_ and a pointer to the same array on SciDB. Let's continue to make another array _b_, and its handle for a corresponding array on SciDB, _B_.
     
     julia> b=rand(4,3)
     4x3 Array{Float64,2}:
@@ -58,7 +58,7 @@ A is a handle to the SciDB corresponding SciDB array. It contains a and a pointe
      0.736307  0.883326   0.90877 
      0.936542  0.0650287  0.958536,32,false)
     
-Let's multiply A and B on SciDB. The result will be stored on SciDB and a handle to that result will be returned to us in Julia. The handle will not itself contain the result data until we explicitly materialize it. This enables us to keep datasets on SciDB only.
+Let's multiply _A_ and _B_ on SciDB. The result will be stored on SciDB and a handle to that result will be returned to us in Julia. The handle will not itself contain the result data until we explicitly materialize it. This enables us to keep datasets on SciDB only.
 
     julia> C=A*B
     scidb_array("Julia_14736187500044874775_9",3x3 sparse matrix with 0 Float64 entries:,32,false)
@@ -142,5 +142,3 @@ Arrays created in SciDB from Julia are persistent and must be explicitly removed
     1. The plugin must be run on the same machine as the shim server and at port 8080.
     2. Only 2-dimensional matrices are supported.
     3. Load the dense_linear_algebra and linear_algebra libraries via iquery before running SciDBJulia.
-
-
