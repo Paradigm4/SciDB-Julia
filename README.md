@@ -7,7 +7,7 @@ Requirements
 
     Julia v0.3 (​http://julialang.org/)
     Julia package "Requests.jl" and its dependencies (​https://github.com/Keno/Requests.jl)
-    SciDB 14.6
+    SciDB 14.6, or SciDB 14.3 with Enterprise Edition
     Paradigm4 shim for REST-ful access to SciDB (​https://github.com/Paradigm4/shim) 
 
 ##Usage
