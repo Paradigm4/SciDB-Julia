@@ -7,14 +7,19 @@ Requirements
 
     Julia v0.3 (​http://julialang.org/)
     Julia package "Requests.jl" and its dependencies (​https://github.com/Keno/Requests.jl)
-    SciDB 14.6, or SciDB 14.3 with Enterprise Edition
-    Paradigm4 shim for REST-ful access to SciDB (​https://github.com/Paradigm4/shim) 
+    SciDB 14.3 with Enterprise Edition
+    Paradigm4 shim for REST-ful access to SciDB (​https://github.com/Paradigm4/shim)
 
-##Usage
+##Installation and Usage
+
+If you don't have the Julia package "Requests.jl" installed, please install it from within Julia via the following:
+
+   julia> Pkg.add("Requests")
+
+To download the source code for the 14.3 release, change 'branch:master' to 'tag:v14.3.0' and then click 'download', or directly download from https://github.com/Paradigm4/SciDB-Julia/archive/v14.3.zip
 
 To load the SciDB-Julia package, ensure that the Julia LOAD_PATH variable points towards the folder in which the package lives.
-
-    NOTE: this step is not required unless the package lives in a non-standard location.
+NOTE: this step is not required unless the package lives in a non-standard location.
 
     julia> push!(LOAD_PATH, "/path/to/SciDB-Julia")
     3-element Array{Union(UTF8String,ASCIIString),1}:
