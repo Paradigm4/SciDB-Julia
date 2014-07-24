@@ -14,7 +14,7 @@ Requirements
 
 If you don't have the Julia package "Requests.jl" installed, please install it from within Julia via the following:
 
-   julia> Pkg.add("Requests")
+    julia> Pkg.add("Requests")
 
 To download the source code for the 14.3 release, change 'branch:master' to 'tag:v14.3.0' and then click 'download', or directly download from https://github.com/Paradigm4/SciDB-Julia/archive/v14.3.zip
 
